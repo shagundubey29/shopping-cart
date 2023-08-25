@@ -1,64 +1,67 @@
 
 [
-    {
+    {   
+        "id": "1",
         "img": "https://example.com/shoe1.jpg",
         "title": "Classic Sneakers",
         "price": 49.99,
         "category": "Casual"
     },
     {
+        "id": "2",
         "img": "https://example.com/shoe2.jpg",
         "title": "Running Shoes",
         "price": 89.99,
         "category": "Athletic"
     },
     {
+        "id": "3",
         "img": "https://example.com/shoe3.jpg",
         "title": "Leather Loafers",
         "price": 79.99,
         "category": "Dress"
     },
     {
+        "id": "4",
         "img": "https://example.com/shoe4.jpg",
         "title": "High-Top Sneakers",
         "price": 69.99,
         "category": "Casual"
     },
     {
+        "id": "5",
         "img": "https://example.com/shoe5.jpg",
         "title": "Trail Running Shoes",
         "price": 109.99,
         "category": "Athletic"
     },
     {
+        "id": "6",
         "img": "https://example.com/shoe6.jpg",
         "title": "Oxford Dress Shoes",
         "price": 99.99,
         "category": "Dress"
     },
     {
+        "id": "7",
         "img": "https://example.com/shoe7.jpg",
         "title": "Canvas Slip-Ons",
         "price": 39.99,
         "category": "Casual"
     },
     {
+        "id": "8",
         "img": "https://example.com/shoe8.jpg",
         "title": "Cross Training Shoes",
         "price": 79.99,
         "category": "Athletic"
     },
     {
+        "id": "9",
         "img": "https://example.com/shoe9.jpg",
         "title": "Monk Strap Shoes",
         "price": 119.99,
         "category": "Dress"
-    },
-    {
-        "img": "https://example.com/shoe10.jpg",
-        "title": "Slip-On Sneakers",
-        "price": 59.99,
-        "category": "Casual"
     }
 ]
 

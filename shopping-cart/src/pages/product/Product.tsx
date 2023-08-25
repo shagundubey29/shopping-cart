@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import  {IProducts} from "../../models/IProducts"
 import"./Product.scss";
+import ProductCard from "../../components/product-card/ProductCard";
 
 interface IState {
   loading: boolean,
@@ -41,14 +42,12 @@ const Product = (): JSX.Element => {
   }, []);
 
   return (
-    <div>
+    <div className="card-container">
       {product.loading && <div>Loading...</div>}
       {product.error && <div>{product.error}</div>}
       {product.product && product.product.map((item : IProducts) : JSX.Element=> {
         return(
-          <div key={item.id}>
-            <h1>{item.title}</h1>
-          </div>
+          <ProductCard key={item.id} {...item}/>
         )
       })}
     </div>

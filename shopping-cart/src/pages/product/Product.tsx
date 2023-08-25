@@ -4,39 +4,37 @@ import"./Product.scss";
 
 interface IState {
   loading: boolean,
-  product: IProducts,
+  product: IProducts[],
   error: string
 }
 
-const Product = () => {
+const Product = (): JSX.Element => {
   const [product, setProduct] = useState<IState>({
-    loading: false,
+    loading: true,
     product: [] as IProducts[],
     error: ""
   });
-
-  const URL = "../../data/products.json";
-
+  console.log(product);
+  const URL = "../src/data/item.json";
   useEffect(() => {
-    const fetchProduct = async () => {
-      try{
-        const response = await fetch(URL);
-        const data = await response.json();
-        console.log(data);
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data : IProducts[]) => {
         setProduct({
+          ...product,
           loading: false,
           product: data,
-          error: ""
         });
-      }catch(error){
+      })
+      .catch(() => {
         setProduct({
+          ...product,
           loading: false,
-          product: [] as IProducts[],
-          error: "Error fetching data"
+          error: "Something went wrong!"
         });
-      }
-    };
-    fetchProduct();
+      });
+      
+
   }, []);
 
   return (

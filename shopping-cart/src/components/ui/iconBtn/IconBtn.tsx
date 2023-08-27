@@ -1,12 +1,16 @@
 import "./IconBtn.scss"
 
+type StyleProps = {
+    style?: React.CSSProperties
+}
+
 type IconBtnProps = {
     children: React.ReactNode
 }
 
-const IconBtn = (props: IconBtnProps) => {
+const IconBtn = (props: IconBtnProps & StyleProps) => {
   return (
-    <button className="cart-wrapper">
+    <button className="btn" style={props.style}>
         {props.children}
     </button>
   )

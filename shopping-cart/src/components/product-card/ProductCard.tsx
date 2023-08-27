@@ -1,16 +1,16 @@
 import { IProducts } from "../../models/IProducts";
 import IconBtn from "../ui/iconBtn/IconBtn";
-import { PiShoppingCartDuotone } from "react-icons/pi";
+import { FaCartShopping } from "react-icons/fa6";
 import "./ProductCard.scss";
 
-const ProductCard = ({id, title, category, img, price} : IProducts):JSX.Element => {
-  
+const ProductCard = ({title, category, img, price} : IProducts):JSX.Element => {
+
   return (
     <div className="card-wrapper">
       <div className="img-container">
         <img src={img} alt={title} />
-        <IconBtn>
-          <PiShoppingCartDuotone className="cart-icon" />
+        <IconBtn style={{ position:"absolute", bottom:"-12%", right:"12%"}}>
+          <FaCartShopping style={{fontSize: "1.2rem",color: "#C3CAD8"}} />
         </IconBtn>
       </div>
       <div className="card-body">

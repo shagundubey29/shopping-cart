@@ -15,8 +15,10 @@ const ProductCard = ({title, category, img, price} : IProducts):JSX.Element => {
       </div>
       <div className="card-body">
         <h3>{title}</h3>
-        <p>{category}</p>
-        <p>{price}</p>
+        <div>
+          <p>{category}</p>
+          <p>{price}</p>
+        </div>
       </div>
     </div>
   )

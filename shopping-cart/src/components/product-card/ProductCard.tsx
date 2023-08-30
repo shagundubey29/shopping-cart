@@ -3,12 +3,14 @@ import IconBtn from "../ui/iconBtn/IconBtn";
 import { FaCartShopping } from "react-icons/fa6";
 import "./ProductCard.scss";
 
+type CardProps = IProducts & {
+  cardColor: string;
+}
 
-const ProductCard = ({title, category, img, price} : IProducts & string):JSX.Element => {
-
+const ProductCard = ({title, category, img, price, cardColor} : CardProps):JSX.Element => {
   return (
     <div className="card-wrapper">
-      <div className="img-container">
+      <div className="img-container" style={{backgroundColor: cardColor}}>
         <img src={img} alt={title} />
         <IconBtn style={{ position:"absolute", bottom:"-12%", right:"12%"}}>
           <FaCartShopping style={{fontSize: "1.2rem",color: "#C3CAD8"}} />

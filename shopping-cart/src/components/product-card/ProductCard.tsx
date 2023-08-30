@@ -3,7 +3,8 @@ import IconBtn from "../ui/iconBtn/IconBtn";
 import { FaCartShopping } from "react-icons/fa6";
 import "./ProductCard.scss";
 
-const ProductCard = ({title, category, img, price} : IProducts):JSX.Element => {
+
+const ProductCard = ({title, category, img, price} : IProducts & string):JSX.Element => {
 
   return (
     <div className="card-wrapper">

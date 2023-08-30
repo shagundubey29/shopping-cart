@@ -12,8 +12,7 @@ interface IState {
 const bgColor : string[] = ["#CDDABB", "#98C8D5", "#9897B9", "#B4BED0", "#DBD7DA", "#BECBC3", "#DBE0BD", "#D5C8B3", "#E3B4BA"];
 
 const Product = (): JSX.Element => {
-  const [colorIndex, setColorIndex] = useState<number>(0);
-  const [product, setProduct] = useState<IState>({
+  const [data, setData] = useState<IState>({
     loading: true,
     product: [] as IProducts[],
     error: ""
@@ -24,16 +23,16 @@ const Product = (): JSX.Element => {
     let subscribe = true;
     fetch(URL)
       .then((response) => response.json())
-      .then((data : IProducts[]) => {
-        setProduct({
-          ...product,
+      .then((item : IProducts[]) => {
+        setData({
+          ...data,
           loading: false,
-          product: data,
+          product: item,
         });
       })
       .catch(() => {
-        setProduct({
-          ...product,
+        setData({
+          ...data,
           loading: false,
           error: "Something went wrong!"
         });
@@ -43,17 +42,12 @@ const Product = (): JSX.Element => {
     };
   }, []);
 
-  const getNextColor = () : string => {
-    const cardColor: string = bgColor[colorIndex % bgColor.length];
-    setColorIndex((prevIndex) => (prevIndex + 1) % bgColor.length);
-    return cardColor;
-  };
-  // console.log(getNextColor())
   return (
     <div className="card-container">
-      {product.loading && <div>Loading...</div>}
-      {product.error && <div>{product.error}</div>}
-      {product.product && product.product.map((item : IProducts, index:number) : JSX.Element=> {
+      {data.loading && <div>Loading...</div>}
+      {data.error && <div>{data.error}</div>}
+      {data.product && 
+        data.product.map((item : IProducts, index:number) : JSX.Element=> {
         const cardColor: string = bgColor[index % bgColor.length];
         return(
           <ProductCard key={item.id} {...item} cardColor={cardColor}/>

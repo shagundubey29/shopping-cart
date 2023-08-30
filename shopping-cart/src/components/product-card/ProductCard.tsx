@@ -1,6 +1,7 @@
 import { IProducts } from "../../models/IProducts";
 import IconBtn from "../ui/iconBtn/IconBtn";
 import { FaCartShopping } from "react-icons/fa6";
+import { HiPlus, HiMinus } from "react-icons/hi";
 import "./ProductCard.scss";
 import { useState } from "react";
 
@@ -17,25 +18,41 @@ interface ImgContainerProps{
 
 const ImgContainer = ({img, title, cardColor, id} : ImgContainerProps) : JSX.Element => {
   const [active, setActive] = useState<boolean>(false);
-  const [addCart, setAddCart] = useState(null);
+  const [addToCart, setAddToCart] = useState<number>(0);
+  console.log(addToCart);
 
   const handleClick = () : void=> {
     setActive(prevActive => !prevActive);
+    setAddToCart(prevAddToCart => prevAddToCart + 1);
+  }
+
+  const onAdd = () : void => {
+    setAddToCart(prevAddToCart => prevAddToCart + 1);
+  }
+
+  const onMinus = () : void => {
+    setAddToCart(prevAddToCart => prevAddToCart - 1);
   }
 
   return(
     <div className="img-container" style={{backgroundColor: cardColor}}>
         <img src={img} alt={title} />
-        <div className="cart"> 
-          <div>+</div>
-          <IconBtn 
-          style={{ position:"absolute", bottom:"-12%", right:"12%"}} 
-          className={active ? "active" : ""}
-          handleClick={handleClick}
-          >
-            <FaCartShopping style={{fontSize: "1.2rem", color:active ? "#8932FFff" : "#C3CAD8" }} />
+        <div className="cart" style={{ position:"absolute", bottom:"-12%", right:"12%"}} > 
+          { addToCart >= 1 &&
+            <button className="button plus" onClick={onAdd}>
+              <HiPlus style={{FontSize: "2rem"}}/>
+            </button>
+          }
+          <IconBtn className={active ? "active" : ""} handleClick={handleClick}>
+            {addToCart > 0 ? <span>{addToCart}</span> : 
+              <FaCartShopping style={{fontSize: "1.2rem", color:active ? "#8932FFff" : "#C3CAD8" }} />
+            }
           </IconBtn>
-          <div>-</div>
+          { addToCart >= 1 &&
+            <button className="button minus" onClick={onMinus}>
+              <HiMinus style={{FontSize: "2rem"}}/>
+            </button>
+          }
         </div>
       </div>
   )

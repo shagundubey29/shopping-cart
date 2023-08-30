@@ -24,6 +24,26 @@
             height: 140px;
             object-fit: contain;
         }
+        .cart{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.7rem;
+            .button{
+                border-radius: 100%;
+                border: 0 solid #ffffff;
+                background-color: #ffffff;
+                height: 1.5rem;
+                width: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                cursor: pointer;
+                font-weight: bold;
+                color: #C3CAD8;
+            }
+        }
     }
     .card-body{
         width: 100%;

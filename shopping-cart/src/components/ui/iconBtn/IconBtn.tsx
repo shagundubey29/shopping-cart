@@ -1,17 +1,16 @@
 import "./IconBtn.scss"
 
-type StyleProps = {
-    style?: React.CSSProperties
-}
-
 type IconBtnProps = {
-    children: React.ReactNode
+    children: React.ReactNode,
+    style?: React.CSSProperties,
+    className: string,
+    handleClick: () => void
 }
 
-const IconBtn = (props: IconBtnProps & StyleProps) => {
+const IconBtn = ({children, style, className, handleClick}: IconBtnProps) => {
   return (
-    <button className="btn" style={props.style}>
-        {props.children}
+    <button className={`btn ${className}`} style={style} onClick={handleClick}>
+        {children}
     </button>
   )
 }

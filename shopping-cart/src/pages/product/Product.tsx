@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
-import  {IProducts} from "../../models/IProducts"
-import"./Product.scss";
+import { IProducts } from "../../models/IProducts";
+import "./Product.scss";
 import ProductCard from "../../components/product-card/ProductCard";
 
 interface IState {
-  loading: boolean,
-  product: IProducts[],
-  error: string
+  loading: boolean;
+  product: IProducts[];
+  error: string;
 }
 
-const bgColor : string[] = ["#CDDABB", "#98C8D5", "#9897B9", "#B4BED0", "#DBD7DA", "#BECBC3", "#DBE0BD", "#D5C8B3", "#E3B4BA"];
+const bgColor: string[] = [
+  "#CDDABB",
+  "#98C8D5",
+  "#9897B9",
+  "#B4BED0",
+  "#DBD7DA",
+  "#BECBC3",
+  "#DBE0BD",
+  "#D5C8B3",
+  "#E3B4BA",
+];
 
 const Product = (): JSX.Element => {
   const [data, setData] = useState<IState>({
     loading: true,
     product: [] as IProducts[],
-    error: ""
+    error: "",
   });
 
   const URL = "../src/data/item.json";
@@ -23,7 +33,7 @@ const Product = (): JSX.Element => {
     let subscribe = true;
     fetch(URL)
       .then((response) => response.json())
-      .then((item : IProducts[]) => {
+      .then((item: IProducts[]) => {
         setData({
           ...data,
           loading: false,
@@ -34,7 +44,7 @@ const Product = (): JSX.Element => {
         setData({
           ...data,
           loading: false,
-          error: "Something went wrong!"
+          error: "Something went wrong!",
         });
       });
     return () => {
@@ -46,15 +56,13 @@ const Product = (): JSX.Element => {
     <div className="card-container">
       {data.loading && <div>Loading...</div>}
       {data.error && <div>{data.error}</div>}
-      {data.product && 
-        data.product.map((item : IProducts, index:number) : JSX.Element=> {
-        const cardColor: string = bgColor[index % bgColor.length];
-        return(
-          <ProductCard key={item.id} {...item} cardColor={cardColor}/>
-        )
-      })}
+      {data.product &&
+        data.product.map((item: IProducts, index: number): JSX.Element => {
+          const cardColor: string = bgColor[index % bgColor.length];
+          return <ProductCard key={item.id} {...item} cardColor={cardColor} />;
+        })}
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

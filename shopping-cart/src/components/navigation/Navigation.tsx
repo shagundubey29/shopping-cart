@@ -1,4 +1,4 @@
-import "./navigation.scss"
+import "./navigation.scss";
 
 const Navigation = () => {
   return (
@@ -10,13 +10,13 @@ const Navigation = () => {
           <li>About</li>
         </ul>
       </div>
-        <div>
-          <ul>
-            <li>Cart</li>
-          </ul>
-        </div>
+      <div>
+        <ul>
+          <li>Cart</li>
+        </ul>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

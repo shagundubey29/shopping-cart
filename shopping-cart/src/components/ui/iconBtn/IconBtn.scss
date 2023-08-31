@@ -1,18 +1,18 @@
-$electric-violet: #8932FFff;
+$electric-violet: #8932ffff;
 
-.btn{
-    border-radius: 100%;
-    border: 0 solid #ffffff;
-    background-color: #ffffff;
-    height: 2.5rem;
-    width: 2.5rem;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    cursor: pointer;
-    &.active{
-        border:2px solid $electric-violet;
-    }
+.btn {
+  border-radius: 100%;
+  border: 0 solid #ffffff;
+  background-color: #ffffff;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  &.active {
+    border: 2px solid $electric-violet;
+  }
 }

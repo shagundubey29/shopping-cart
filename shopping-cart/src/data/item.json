@@ -1,66 +1,65 @@
-
 [
-    {   
-        "id": "1",
-        "img": "../src/assets/img/shoe1.png",
-        "title": "Classic Sneakers",
-        "price": 49.99,
-        "category": "Casual"
-    },
-    {
-        "id": "2",
-        "img": "../src/assets/img/shoe2.png",
-        "title": "Running Shoes",
-        "price": 89.99,
-        "category": "Athletic"
-    },
-    {
-        "id": "3",
-        "img": "../src/assets/img/shoe3.png",
-        "title": "Leather Loafers",
-        "price": 79.99,
-        "category": "Sneaker"
-    },
-    {
-        "id": "4",
-        "img": "../src/assets/img/shoe4.png",
-        "title": "High-Top Sneakers",
-        "price": 69.99,
-        "category": "Casual"
-    },
-    {
-        "id": "5",
-        "img": "../src/assets/img/shoe5.png",
-        "title": "Trail Running Shoes",
-        "price": 109.99,
-        "category": "Athletic"
-    },
-    {
-        "id": "6",
-        "img": "../src/assets/img/shoe6.png",
-        "title": "Oxford Sneaker Shoes",
-        "price": 99.99,
-        "category": "Sneaker"
-    },
-    {
-        "id": "7",
-        "img": "../src/assets/img/shoe7.png",
-        "title": "Canvas Slip-Ons",
-        "price": 39.99,
-        "category": "Casual"
-    },
-    {
-        "id": "8",
-        "img": "../src/assets/img/shoe3.png",
-        "title": "Cross Training Shoes",
-        "price": 79.99,
-        "category": "Athletic"
-    },
-    {
-        "id": "9",
-        "img": "../src/assets/img/shoe9.png",
-        "title": "Monk Strap Shoes",
-        "price": 119.99,
-        "category": "Sneaker"
-    }
+  {
+    "id": "1",
+    "img": "../src/assets/img/shoe1.png",
+    "title": "Classic Sneakers",
+    "price": 49.99,
+    "category": "Casual"
+  },
+  {
+    "id": "2",
+    "img": "../src/assets/img/shoe2.png",
+    "title": "Running Shoes",
+    "price": 89.99,
+    "category": "Athletic"
+  },
+  {
+    "id": "3",
+    "img": "../src/assets/img/shoe3.png",
+    "title": "Leather Loafers",
+    "price": 79.99,
+    "category": "Sneaker"
+  },
+  {
+    "id": "4",
+    "img": "../src/assets/img/shoe4.png",
+    "title": "High-Top Sneakers",
+    "price": 69.99,
+    "category": "Casual"
+  },
+  {
+    "id": "5",
+    "img": "../src/assets/img/shoe5.png",
+    "title": "Trail Running Shoes",
+    "price": 109.99,
+    "category": "Athletic"
+  },
+  {
+    "id": "6",
+    "img": "../src/assets/img/shoe6.png",
+    "title": "Oxford Sneaker Shoes",
+    "price": 99.99,
+    "category": "Sneaker"
+  },
+  {
+    "id": "7",
+    "img": "../src/assets/img/shoe7.png",
+    "title": "Canvas Slip-Ons",
+    "price": 39.99,
+    "category": "Casual"
+  },
+  {
+    "id": "8",
+    "img": "../src/assets/img/shoe3.png",
+    "title": "Cross Training Shoes",
+    "price": 79.99,
+    "category": "Athletic"
+  },
+  {
+    "id": "9",
+    "img": "../src/assets/img/shoe9.png",
+    "title": "Monk Strap Shoes",
+    "price": 119.99,
+    "category": "Sneaker"
+  }
 ]

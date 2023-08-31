@@ -1,18 +1,18 @@
-import "./IconBtn.scss"
+import "./IconBtn.scss";
 
 type IconBtnProps = {
-    children: React.ReactNode,
-    style?: React.CSSProperties,
-    className: string,
-    handleClick: () => void
-}
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  className: string;
+  handleClick: () => void;
+};
 
-const IconBtn = ({children, style, className, handleClick}: IconBtnProps) => {
+const IconBtn = ({ children, style, className, handleClick }: IconBtnProps) => {
   return (
     <button className={`btn ${className}`} style={style} onClick={handleClick}>
-        {children}
+      {children}
     </button>
-  )
-}
+  );
+};
 
-export default IconBtn
+export default IconBtn;

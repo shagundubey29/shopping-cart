@@ -1,6 +1,6 @@
-import Navigation from "../../components/navigation/Navigation"
-import Product from "../product/Product"
-import "./home.scss"
+import Navigation from "../../components/navigation/Navigation";
+import Product from "../product/Product";
+import "./home.scss";
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
       <Navigation />
       <Product />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

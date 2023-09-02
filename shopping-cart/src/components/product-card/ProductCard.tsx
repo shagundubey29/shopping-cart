@@ -1,5 +1,5 @@
 import { IProducts } from "../../models/IProducts";
-import IconBtn from "../ui/iconBtn/IconBtn";
+import IconBtn from "../iconBtn/IconBtn";
 import { FaCartShopping } from "react-icons/fa6";
 import { HiPlus, HiMinus } from "react-icons/hi";
 import "./ProductCard.scss";
@@ -24,10 +24,9 @@ const ImgContainer = ({
 }: ImgContainerProps): JSX.Element => {
   const [active, setActive] = useState<boolean>(false);
   const [addToCart, setAddToCart] = useState<number>(0);
-  console.log(addToCart);
 
   const handleClick = (): void => {
-    setActive((prevActive) => !prevActive);
+    setActive(true);
     setAddToCart((prevAddToCart) => prevAddToCart + 1);
   };
 
@@ -37,6 +36,7 @@ const ImgContainer = ({
 
   const onMinus = (): void => {
     setAddToCart((prevAddToCart) => prevAddToCart - 1);
+    if (addToCart === 1) setActive(false);
   };
 
   return (
@@ -55,12 +55,7 @@ const ImgContainer = ({
           {addToCart > 0 ? (
             <span>{addToCart}</span>
           ) : (
-            <FaCartShopping
-              style={{
-                fontSize: "1.2rem",
-                color: active ? "#8932FFff" : "#C3CAD8",
-              }}
-            />
+            <FaCartShopping className="icon" />
           )}
         </IconBtn>
         {addToCart >= 1 && (

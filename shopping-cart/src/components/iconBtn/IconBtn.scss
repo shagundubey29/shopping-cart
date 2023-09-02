@@ -15,4 +15,14 @@ $electric-violet: #8932ffff;
   &.active {
     border: 2px solid $electric-violet;
   }
+  &:hover {
+    border: 2px solid $electric-violet;
+  }
+  .icon {
+    color: #c3cad8;
+    font-size: "1.2rem";
+  }
+  &:hover > .icon {
+    color: #8932ffff;
+  }
 }

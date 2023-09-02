@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { IProducts } from "../../models/IProducts";
 import "./Product.scss";
 import ProductCard from "../../components/product-card/ProductCard";
+import FilterTopBar from "../../components/filterTopbar/FilterTopBar";
+import SideBarFilter from "../../components/sideBarFilter/SideBarFilter";
 
 interface IState {
   loading: boolean;
@@ -53,15 +55,21 @@ const Product = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="card-container">
-      {data.loading && <div>Loading...</div>}
-      {data.error && <div>{data.error}</div>}
-      {data.product &&
-        data.product.map((item: IProducts, index: number): JSX.Element => {
-          const cardColor: string = bgColor[index % bgColor.length];
-          return <ProductCard key={item.id} {...item} cardColor={cardColor} />;
-        })}
-    </div>
+    <main>
+      <FilterTopBar />
+      <SideBarFilter />
+      <div className="card-container">
+        {data.loading && <div>Loading...</div>}
+        {data.error && <div>{data.error}</div>}
+        {data.product &&
+          data.product.map((item: IProducts, index: number): JSX.Element => {
+            const cardColor: string = bgColor[index % bgColor.length];
+            return (
+              <ProductCard key={item.id} {...item} cardColor={cardColor} />
+            );
+          })}
+      </div>
+    </main>
   );
 };
 

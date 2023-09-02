@@ -1,0 +1,70 @@
+$electric-violet: #8932ffff;
+
+.FilterTopBar-wrapper{
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    border-bottom: 1px solid #c3cad8ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    h2{
+        position: relative;
+        // width: 100%;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #5c5b82;
+    }
+    div{
+        position: relative;
+        // width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        gap: 2rem;
+        p{
+            font-size: 0.8rem;
+            letter-spacing: 0.2;
+            font-weight: bold;
+            color: #9897b9ff;
+            text-transform: capitalize;
+            cursor: pointer;
+            &:hover {
+                    color: $electric-violet;
+                }
+        }
+    }
+    button{
+        position: relative;
+        // width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        border:none;
+        outline: none;
+        color: #9897b9ff;
+        background-color: #f7f8faff;
+        padding-right: 4.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.2;
+        font-weight: bold;
+        cursor: pointer;
+        .icon{
+            font-size: 1.5rem;
+            transition: all 0.6s ease;
+        }
+        .icon2{
+            position: absolute;
+            right: 1rem;
+        }
+        &:hover > .icon2{
+            // position: absolute;
+            right: 0px;
+        }
+        &:hover{
+            color: $electric-violet;
+        }
+    }
+}

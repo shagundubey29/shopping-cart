@@ -1,5 +1,5 @@
 $timberwolf: #dbd7daff;
-$cool-gray: #9897b9ff;
+$cool-gray: #5c5b82;
 $light-blue: #98c8d5ff;
 $tea-green: #cddabbff;
 $french-gray: #b4bed0ff;
@@ -10,12 +10,19 @@ $beige: #dbe0bdff;
 $french-gray-2: #c3cad8ff;
 $electric-violet: #8932ffff;
 
-.card-container {
+main{
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px;
-  gap: 2rem;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1024px;
+    margin: 10px;
+    padding: 10px;
+    gap: 2rem;
+  }
 }

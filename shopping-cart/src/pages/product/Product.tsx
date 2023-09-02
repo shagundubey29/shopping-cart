@@ -23,6 +23,22 @@ const bgColor: string[] = [
   "#E3B4BA",
 ];
 
+const CardContainer = ({loading, error, product} : IState ) : JSX.Element => {
+  return(
+    <div className="card-container">
+        {loading && <div>Loading...</div>}
+        {error && <div>{error}</div>}
+        {product &&
+          product.map((item: IProducts, index: number): JSX.Element => {
+            const cardColor: string = bgColor[index % bgColor.length];
+            return (
+              <ProductCard key={item.id} {...item} cardColor={cardColor} />
+            );
+          })}
+      </div>
+  )
+}
+
 const Product = (): JSX.Element => {
   const [data, setData] = useState<IState>({
     loading: true,
@@ -58,17 +74,7 @@ const Product = (): JSX.Element => {
     <main>
       <FilterTopBar />
       <SideBarFilter />
-      <div className="card-container">
-        {data.loading && <div>Loading...</div>}
-        {data.error && <div>{data.error}</div>}
-        {data.product &&
-          data.product.map((item: IProducts, index: number): JSX.Element => {
-            const cardColor: string = bgColor[index % bgColor.length];
-            return (
-              <ProductCard key={item.id} {...item} cardColor={cardColor} />
-            );
-          })}
-      </div>
+      <CardContainer {...data}/>
     </main>
   );
 };

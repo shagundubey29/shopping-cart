@@ -10,19 +10,25 @@ $beige: #dbe0bdff;
 $french-gray-2: #c3cad8ff;
 $electric-violet: #8932ffff;
 
-main{
+main {
   display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-  .card-container {
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  div {
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
     justify-content: center;
-    max-width: 1024px;
-    margin: 10px;
-    padding: 10px;
-    gap: 2rem;
+    align-items: center;
+    flex-flow: row wrap;
+    .card-container {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      max-width: 1024px;
+      margin: 10px;
+      padding: 10px;
+      gap: 2rem;
+    }
   }
 }

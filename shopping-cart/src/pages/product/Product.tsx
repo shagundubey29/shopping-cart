@@ -4,7 +4,6 @@ import "./Product.scss";
 import ProductCard from "../../components/product-card/ProductCard";
 import FilterTopBar from "../../components/filterTopbar/FilterTopBar";
 import SideBarFilter from "../../components/sideBarFilter/SideBarFilter";
-
 interface IState {
   loading: boolean;
   product: IProducts[];
@@ -23,21 +22,19 @@ const bgColor: string[] = [
   "#E3B4BA",
 ];
 
-const CardContainer = ({loading, error, product} : IState ) : JSX.Element => {
-  return(
+const CardContainer = ({ loading, error, product }: IState): JSX.Element => {
+  return (
     <div className="card-container">
-        {loading && <div>Loading...</div>}
-        {error && <div>{error}</div>}
-        {product &&
-          product.map((item: IProducts, index: number): JSX.Element => {
-            const cardColor: string = bgColor[index % bgColor.length];
-            return (
-              <ProductCard key={item.id} {...item} cardColor={cardColor} />
-            );
-          })}
-      </div>
-  )
-}
+      {loading && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {product &&
+        product.map((item: IProducts, index: number): JSX.Element => {
+          const cardColor: string = bgColor[index % bgColor.length];
+          return <ProductCard key={item.id} {...item} cardColor={cardColor} />;
+        })}
+    </div>
+  );
+};
 
 const Product = (): JSX.Element => {
   const [data, setData] = useState<IState>({
@@ -73,8 +70,10 @@ const Product = (): JSX.Element => {
   return (
     <main>
       <FilterTopBar />
-      <SideBarFilter />
-      <CardContainer {...data}/>
+      <div>
+        <SideBarFilter />
+        <CardContainer {...data} />
+      </div>
     </main>
   );
 };

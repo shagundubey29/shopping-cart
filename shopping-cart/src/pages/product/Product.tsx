@@ -70,7 +70,7 @@ const Product = (): JSX.Element => {
   return (
     <main>
       <FilterTopBar />
-      <div>
+      <div className="main-wrapper">
         <SideBarFilter />
         <CardContainer {...data} />
       </div>

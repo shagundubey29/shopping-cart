@@ -16,11 +16,14 @@ main {
   align-items: center;
   justify-content: center;
   .main-wrapper{
+    display: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
+    align-items: start;
+    flex-basis: 100%;
+    // flex-flow: row wrap;
     .card-container {
+      flex-basis: 100%;
       display: flex;
       flex-flow: row wrap;
       align-items: center;

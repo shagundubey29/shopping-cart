@@ -1,6 +1,7 @@
 .sideFilter-wrapper{
     position: relative;
-    width: 100%;
+    // width: 100%;
+    flex-basis: 40%;
     display: flex;
     justify-content: flex-start;
     flex-flow: column wrap;

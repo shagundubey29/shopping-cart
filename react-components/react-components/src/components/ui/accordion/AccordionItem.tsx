@@ -1,8 +1,36 @@
+import AccordionBtn from './AccordionBtn'
+import AccordionPanel from './AccordionPanel'
 
-const AccordionItem = ({children} : {children: React.ReactNode}) => {
+interface itemProp {
+  setIsActive: React.Dispatch<React.SetStateAction<number>>,
+  isSelected: boolean,
+  id: number,
+  ques: string,
+  text: string
+}
+
+const AccordionItem = ({
+  setIsActive,
+  isSelected,
+  id,
+  ques,
+  text
+}: itemProp) => {
+  const handleClick = () => {
+    setIsActive(id)
+  }
+
   return (
-    <li className=" w-full relative flex justify-center items-center flex-col pb-3 last:border-b-2">
-        {children}
+    <li className=" w-full flex justify-center items-center flex-col last:border-b">
+      <AccordionBtn
+        handleClick={() => handleClick()}
+        isSelected={isSelected}
+      >
+        {ques}
+      </AccordionBtn>
+      <AccordionPanel  isSelected={isSelected}>
+        {text}
+      </AccordionPanel>
     </li>
   )
 }
